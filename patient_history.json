@@ -1,0 +1,19 @@
+[
+  {
+    "timestamp": "2025-11-27T22:01:11.707427",
+    "patient_data": {
+      "age": 25.0,
+      "sex": "Male",
+      "blood_pressure": 94.0,
+      "cholesterol": 148.0,
+      "max_heart_rate": 86.0,
+      "fasting_blood_sugar_high": true
+    },
+    "cluster_id": 2,
+    "predictions": {
+      "heart_disease": true,
+      "hypertension": false,
+      "diabetes_risk": true
+    }
+  }
+]

@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-0">🩺 Patient Clinical Entry Portal</h2>
+            </div>
+            <div class="card-body">
+                <form action="/predict" method="POST">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="age" class="form-label">Age</label>
+                                <input type="number" class="form-control" id="age" name="age" required min="1" max="120">
+                                <div class="form-text">Enter patient's age in years</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="sex" class="form-label">Sex</label>
+                                <select class="form-select" id="sex" name="sex" required>
+                                    <option value="">Select sex</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="blood_pressure" class="form-label">Blood Pressure</label>
+                                <input type="number" class="form-control" id="blood_pressure" name="blood_pressure" required min="50" max="300">
+                                <div class="form-text">Enter systolic blood pressure (mmHg)</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="cholesterol" class="form-label">Cholesterol</label>
+                                <input type="number" class="form-control" id="cholesterol" name="cholesterol" required min="100" max="600">
+                                <div class="form-text">Enter serum cholesterol (mg/dl)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="max_heart_rate" class="form-label">Max Heart Rate</label>
+                                <input type="number" class="form-control" id="max_heart_rate" name="max_heart_rate" required min="40" max="250">
+                                <div class="form-text">Enter maximum heart rate achieved</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="fasting_blood_sugar" class="form-label">Fasting Blood Sugar > 120 mg/dl</label>
+                                <select class="form-select" id="fasting_blood_sugar" name="fasting_blood_sugar" required>
+                                    <option value="">Select option</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">🔮 Predict Risk</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header bg-info text-white">
+                <h3 class="mb-0">📋 System Features</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>🎯 Key Features</h5>
+                        <ul>
+                            <li>Risk Profile Clustering</li>
+                            <li>Multi-Disease Prediction</li>
+                            <li>Interactive Dashboard</li>
+                            <li>Patient History Tracking</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>📊 Predictions</h5>
+                        <ul>
+                            <li>Heart Disease Risk</li>
+                            <li>Hypertension Risk</li>
+                            <li>Diabetes Risk</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

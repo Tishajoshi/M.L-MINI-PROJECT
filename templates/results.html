@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <div class="card result-card">
+            <div class="card-header bg-success text-white">
+                <h2 class="mb-0">📋 Diagnostic Summary</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Patient Information</h4>
+                        <table class="table table-striped">
+                            <tr>
+                                <td><strong>Age:</strong></td>
+                                <td>{{ patient_data.age }} years</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sex:</strong></td>
+                                <td>{{ patient_data.sex }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Blood Pressure:</strong></td>
+                                <td>{{ patient_data.blood_pressure }} mmHg</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cholesterol:</strong></td>
+                                <td>{{ patient_data.cholesterol }} mg/dl</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Max Heart Rate:</strong></td>
+                                <td>{{ patient_data.max_heart_rate }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>High Fasting Blood Sugar:</strong></td>
+                                <td>{{ 'Yes' if patient_data.fasting_blood_sugar_high else 'No' }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Risk Assessment Results</h4>
+                        <div class="mb-3">
+                            <strong>Risk Profile Group:</strong> 
+                            <span class="badge bg-primary">Cluster {{ results.cluster_id }}</span>
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>Heart Disease:</strong>
+                            {% if results.predictions.heart_disease %}
+                                <span class="badge bg-danger">POSITIVE (Risk Detected)</span>
+                            {% else %}
+                                <span class="badge bg-success">Negative (Healthy)</span>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>Hypertension:</strong>
+                            {% if results.predictions.hypertension %}
+                                <span class="badge bg-danger">POSITIVE (Risk Detected)</span>
+                            {% else %}
+                                <span class="badge bg-success">Negative (Healthy)</span>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="mb-2">
+                            <strong>Diabetes Risk:</strong>
+                            {% if results.predictions.diabetes_risk %}
+                                <span class="badge bg-danger">POSITIVE (Risk Detected)</span>
+                            {% else %}
+                                <span class="badge bg-success">Negative (Healthy)</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <a href="/" class="btn btn-primary">🔄 New Prediction</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dashboard">
+            <h3 class="text-center mb-4">📊 Comprehensive Medical Insight Dashboard</h3>
+            <img src="data:image/png;base64,{{ plot_url }}" alt="Medical Insight Dashboard" class="img-fluid">
+        </div>
+    </div>
+</div>
+{% endblock %}
