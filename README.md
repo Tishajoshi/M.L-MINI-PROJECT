@@ -2,7 +2,7 @@
 
 This is an enhanced medical diagnosis prediction system that uses machine learning to predict heart disease, hypertension, and diabetes risk based on patient data. The system combines powerful data analysis with an intuitive user interface to help medical professionals quickly assess patient risk profiles.
 
-https://sicmain.streamlit.app/
+(https://ml-mini-project-8b69htlg2ddky3q44wzmpi.streamlit.app/)
 
 ##  Key Features
 
