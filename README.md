@@ -1,4 +1,4 @@
-# Medical Diagnosis Prediction System
+# Machine Learning Mini Project - Medical Diagnosis Prediction System
 
 This is an enhanced medical diagnosis prediction system that uses machine learning to predict heart disease, hypertension, and diabetes risk based on patient data. The system combines powerful data analysis with an intuitive user interface to help medical professionals quickly assess patient risk profiles.
 
